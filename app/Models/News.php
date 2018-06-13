@@ -10,7 +10,6 @@ class News extends Model
         'name',
         'image',
         'detail_text',
-        'qty',
         'category_id',
         'user_id',
     ];

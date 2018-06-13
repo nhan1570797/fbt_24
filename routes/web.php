@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+    Route::get('index', ['uses' => 'IndexController@index', 'as' => 'admin.index.index']);
+});
+
+Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function() {
+    Route::get('login', ['uses' => 'AuthController@login', 'as' => 'auth.auth.login']);
+
+    Route::get('regsiter', ['uses' => 'AuthController@regsiter', 'as' => 'auth.auth.regsiter']);
+});
